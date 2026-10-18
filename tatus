@@ -1,0 +1,65 @@
+[33mcommit f68950489d2f767400b1b699eb048f903136ee0d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Merge: dcd90a4 5f9784a
+Author: christian <christiancuescano055@gmail.com>
+Date:   Sun Oct 18 22:59:17 2026 +0800
+
+    Resolve merge conflicts
+
+ ...bm-plex-mono-cyrillic-400-normal-BSMlKf0J.woff2 | Bin [31m0[m -> [32m8356[m bytes
+ ...ibm-plex-mono-cyrillic-400-normal-CEL4l2ZJ.woff | Bin [31m0[m -> [32m7204[m bytes
+ ...ibm-plex-mono-cyrillic-500-normal-Ael50iVv.woff | Bin [31m0[m -> [32m7208[m bytes
+ ...bm-plex-mono-cyrillic-500-normal-Bq9vWWag.woff2 | Bin [31m0[m -> [32m8460[m bytes
+ ...bm-plex-mono-cyrillic-600-normal-CTOM6hUh.woff2 | Bin [31m0[m -> [32m9352[m bytes
+ ...ibm-plex-mono-cyrillic-600-normal-fLZuRloM.woff | Bin [31m0[m -> [32m7268[m bytes
+ ...plex-mono-cyrillic-ext-400-normal-DMdlQ8Kv.woff | Bin [31m0[m -> [32m5820[m bytes
+ ...lex-mono-cyrillic-ext-400-normal-xuaO2J-f.woff2 | Bin [31m0[m -> [32m6912[m bytes
+ ...plex-mono-cyrillic-ext-500-normal-BIfNGwUT.woff | Bin [31m0[m -> [32m5772[m bytes
+ ...lex-mono-cyrillic-ext-500-normal-BqneJy0T.woff2 | Bin [31m0[m -> [32m6972[m bytes
+ ...plex-mono-cyrillic-ext-600-normal-9HEixskS.woff | Bin [31m0[m -> [32m5792[m bytes
+ ...lex-mono-cyrillic-ext-600-normal-V-xxqcpd.woff2 | Bin [31m0[m -> [32m7692[m bytes
+ .../ibm-plex-mono-latin-400-normal-CvHOgSBP.woff   | Bin [31m0[m -> [32m13144[m bytes
+ .../ibm-plex-mono-latin-400-normal-DMJ8VG8y.woff2  | Bin [31m0[m -> [32m14708[m bytes
+ .../ibm-plex-mono-latin-500-normal-CB9ihrfo.woff   | Bin [31m0[m -> [32m13156[m bytes
+ .../ibm-plex-mono-latin-500-normal-DSY6xOcd.woff2  | Bin [31m0[m -> [32m14888[m bytes
+ .../ibm-plex-mono-latin-600-normal-BgSNZQsw.woff2  | Bin [31m0[m -> [32m15620[m bytes
+ .../ibm-plex-mono-latin-600-normal-DWFSQ4vo.woff   | Bin [31m0[m -> [32m13208[m bytes
+ ...m-plex-mono-latin-ext-400-normal-BmRBH3aV.woff2 | Bin [31m0[m -> [32m13348[m bytes
+ ...bm-plex-mono-latin-ext-400-normal-D3D2R8hC.woff | Bin [31m0[m -> [32m11768[m bytes
+ ...m-plex-mono-latin-ext-500-normal-CAhNIIs5.woff2 | Bin [31m0[m -> [32m13432[m bytes
+ ...bm-plex-mono-latin-ext-500-normal-CZ70TYgx.woff | Bin [31m0[m -> [32m11768[m bytes
+ ...m-plex-mono-latin-ext-600-normal-D38SheWl.woff2 | Bin [31m0[m -> [32m14328[m bytes
+ ...bm-plex-mono-latin-ext-600-normal-DmB0ttJJ.woff | Bin [31m0[m -> [32m11832[m bytes
+ ...-plex-mono-vietnamese-400-normal-BulugwFq.woff2 | Bin [31m0[m -> [32m5868[m bytes
+ ...m-plex-mono-vietnamese-400-normal-DDuiU_S-.woff | Bin [31m0[m -> [32m5620[m bytes
+ ...m-plex-mono-vietnamese-500-normal-C8zxqsMH.woff | Bin [31m0[m -> [32m5616[m bytes
+ ...-plex-mono-vietnamese-500-normal-DZ4AoWbu.woff2 | Bin [31m0[m -> [32m6040[m bytes
+ ...-plex-mono-vietnamese-600-normal-D2EvbN8M.woff2 | Bin [31m0[m -> [32m6932[m bytes
+ ...m-plex-mono-vietnamese-600-normal-iLQfcSjf.woff | Bin [31m0[m -> [32m5712[m bytes
+ assets/index-C0LLBRuQ.css                          |   1 [32m+[m
+ assets/index-nwLu7EpQ.js                           |  12 [32m++++++++++[m
+ .../space-grotesk-latin-500-normal-CNSSEhBt.woff   | Bin [31m0[m -> [32m16988[m bytes
+ .../space-grotesk-latin-500-normal-lFbtlQH6.woff2  | Bin [31m0[m -> [32m13312[m bytes
+ .../space-grotesk-latin-600-normal-BflQw4A9.woff   | Bin [31m0[m -> [32m16884[m bytes
+ .../space-grotesk-latin-600-normal-DjKNqYRj.woff2  | Bin [31m0[m -> [32m13284[m bytes
+ .../space-grotesk-latin-700-normal-CwsQ-cCU.woff   | Bin [31m0[m -> [32m16416[m bytes
+ .../space-grotesk-latin-700-normal-RjhwGPKo.woff2  | Bin [31m0[m -> [32m12840[m bytes
+ ...pace-grotesk-latin-ext-500-normal-3dgZTiw9.woff | Bin [31m0[m -> [32m16788[m bytes
+ ...ace-grotesk-latin-ext-500-normal-DUe3BAxM.woff2 | Bin [31m0[m -> [32m12272[m bytes
+ ...ace-grotesk-latin-ext-600-normal-DxxdqCpr.woff2 | Bin [31m0[m -> [32m12288[m bytes
+ ...pace-grotesk-latin-ext-600-normal-VcznFIpX.woff | Bin [31m0[m -> [32m16728[m bytes
+ ...ace-grotesk-latin-ext-700-normal-BQnZhY3m.woff2 | Bin [31m0[m -> [32m11992[m bytes
+ ...pace-grotesk-latin-ext-700-normal-HVCqSBdx.woff | Bin [31m0[m -> [32m16460[m bytes
+ ...ace-grotesk-vietnamese-500-normal-BTqKIpxg.woff | Bin [31m0[m -> [32m5716[m bytes
+ ...ce-grotesk-vietnamese-500-normal-BmEvtly_.woff2 | Bin [31m0[m -> [32m4324[m bytes
+ ...ace-grotesk-vietnamese-600-normal-D6zpsUhD.woff | Bin [31m0[m -> [32m5704[m bytes
+ ...ce-grotesk-vietnamese-600-normal-DUi7WF5p.woff2 | Bin [31m0[m -> [32m4312[m bytes
+ ...ce-grotesk-vietnamese-700-normal-DMty7AZE.woff2 | Bin [31m0[m -> [32m4204[m bytes
+ ...ace-grotesk-vietnamese-700-normal-Duxec5Rn.woff | Bin [31m0[m -> [32m5588[m bytes
+ favicon.svg                                        |   1 [32m+[m
+ icon-192.png                                       | Bin [31m0[m -> [32m6568[m bytes
+ icon-512.png                                       | Bin [31m0[m -> [32m16523[m bytes
+ icon-maskable-512.png                              | Bin [31m0[m -> [32m9568[m bytes
+ index.html                                         |  16 [32m+++++++++++++[m
+ manifest.webmanifest                               |  16 [32m+++++++++++++[m
+ sw.js                                              |  26 [32m+++++++++++++++++++++[m
+ 57 files changed, 72 insertions(+)
