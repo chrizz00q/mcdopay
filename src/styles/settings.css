@@ -119,3 +119,38 @@
   gap: var(--space-2);
   flex-wrap: wrap;
 }
+
+/* ---------- Cutoff log fixes (iOS Safari) ---------- */
+/* Native <input type="month"> ignores width:100% on iOS and spills out of the card. */
+.settings-section__body > .field,
+.settings-section__body .field > .input {
+  min-width: 0;
+  max-width: 100%;
+}
+.input[type='month'],
+.input[type='date'],
+.input[type='time'] {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  text-align: left;
+  line-height: 40px;
+}
+.input[type='month']::-webkit-date-and-time-value {
+  text-align: left;
+  min-height: 1.2em;
+}
+
+/* Equal-width copy buttons that stack neatly on phones */
+.cutoff-log-picker {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+.cutoff-log-picker .btn {
+  width: 100%;
+  white-space: nowrap;
+}
