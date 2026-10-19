@@ -32,7 +32,7 @@ export function SpendingLog({ plan, onAdd, onRemove }: SpendingLogProps) {
   const recent = [...plan.expenses].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 8);
 
   return (
-    <section className="card" aria-label="Spending log">
+    <section className="card budget-spend" aria-label="Spending log">
       <div className="section-heading">
         <h2>Spending log</h2>
         <span className="section-heading__hint">{plan.expenses.length} logged</span>

@@ -134,9 +134,10 @@ export function Budget() {
     <div className="app-shell">
       <Header subtitle="Budget planner" />
 
-      <div className="dashboard-grid">
-        <div className="dashboard-main">
-          <CutoffPicker cutoffId={cutoffId} onChange={(id) => setParams({ c: id }, { replace: true })} />
+      <CutoffPicker cutoffId={cutoffId} onChange={(id) => setParams({ c: id }, { replace: true })} />
+
+      <div className="budget-grid">
+        <div className="budget-main">
           <PayCard
             plan={plan}
             stats={stats}
@@ -156,7 +157,7 @@ export function Budget() {
           <SpendingLog plan={plan} onAdd={addExpense} onRemove={removeExpense} />
         </div>
 
-        <div className="dashboard-side budget-side">
+        <div className="budget-side">
           <CoachCard steps={steps} onAction={runAction} />
           <DailyLimit plan={plan} stats={stats} allowance={allowance} onChange={change} />
         </div>

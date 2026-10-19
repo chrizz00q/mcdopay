@@ -30,7 +30,7 @@ export function SplitCard({ plan, stats, onChange, onCopy }: SplitCardProps) {
   const customTotal = plan.split.needs + plan.split.wants;
 
   return (
-    <section className="card" aria-label="How to split your take-home">
+    <section className="card budget-split" aria-label="How to split your take-home">
       <div className="section-heading">
         <h2>Split your take-home</h2>
         <button type="button" className="btn btn--ghost btn--sm" onClick={onCopy}>

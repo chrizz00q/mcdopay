@@ -25,8 +25,8 @@ export function PayCard({ plan, stats, loggedGross, onChange, onEstimate }: PayC
     onChange({ deductions: { ...plan.deductions, [key]: value } });
 
   return (
-    <section aria-label="Your pay for this cutoff">
-      <div className="summary-grid">
+    <section className="budget-pay" aria-label="Your pay for this cutoff">
+      <div className="summary-grid summary-grid--budget">
         <SummaryCard icon={Wallet} label="Gross pay" value={formatCurrency(stats.gross)} />
         <SummaryCard icon={Minus} label="Deductions" value={formatCurrency(stats.deductions)} />
         <SummaryCard icon={HandCoins} label="Take-home" value={formatCurrency(stats.net)} accent="accent" />

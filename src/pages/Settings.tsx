@@ -1,12 +1,15 @@
 import { format } from 'date-fns';
-import { Bell, Clipboard, Download, HardDrive, Info, Moon, Palette, Sun, Upload, Wallet } from 'lucide-react';
+import { Bell, Clipboard, Download, HardDrive, Info, Moon, Palette, Smartphone, Sun, Upload, Wallet } from 'lucide-react';
 import { useMemo, useRef, useState } from 'react';
 import { ConfirmDialog } from '../components/ConfirmDialog';
 import { Header } from '../components/Header';
+import { InstallSteps } from '../components/InstallSteps';
 import { ReminderModal } from '../components/ReminderModal';
 import { SettingsSection } from '../components/SettingsSection';
 import { Toast } from '../components/Toast';
 import { useAppData } from '../context/AppDataContext';
+import { useInstall, useOfflineReady } from '../hooks/useInstall';
+import { promptInstall } from '../utils/install';
 import { RATE_LEGEND } from '../utils/rates';
 import { buildCutoffLog, computeMonthSummary, formatCurrency } from '../utils/calculations';
 
@@ -14,6 +17,8 @@ const APP_VERSION = '1.1.0';
 
 export function Settings() {
   const { settings, updateSettings, entries, exportData, importData } = useAppData();
+  const install = useInstall();
+  const offlineReady = useOfflineReady();
   const fileRef = useRef<HTMLInputElement>(null);
   const [pendingImport, setPendingImport] = useState<string | null>(null);
   const [rateInput, setRateInput] = useState(String(settings.hourlyRate));
@@ -208,6 +213,52 @@ export function Settings() {
               Configure
             </button>
           </div>
+        </SettingsSection>
+
+        <SettingsSection
+          icon={Smartphone}
+          title="Install app"
+          description="Open Mcdopay from your home screen, full screen, and use it without internet."
+        >
+          {install.standalone ? (
+            <div className="settings-row">
+              <div>
+                <div className="settings-row__label">Installed on this device</div>
+                <div className="settings-row__sublabel">
+                  {offlineReady ? 'Works offline' : 'Open it once with internet to save it for offline use'}
+                </div>
+              </div>
+            </div>
+          ) : install.canPrompt ? (
+            <div className="settings-row">
+              <div>
+                <div className="settings-row__label">Add Mcdopay to this device</div>
+                <div className="settings-row__sublabel">
+                  {offlineReady ? 'Saved for offline use' : 'Saving for offline use…'}
+                </div>
+              </div>
+              <button
+                type="button"
+                className="btn btn--primary"
+                onClick={async () => {
+                  const outcome = await promptInstall();
+                  if (outcome === 'accepted') setToast('Mcdopay installed.');
+                }}
+              >
+                <Download size={15} />
+                Install app
+              </button>
+            </div>
+          ) : install.isIOS ? (
+            <div>
+              <InstallSteps inAppBrowser={install.inAppBrowser} />
+            </div>
+          ) : (
+            <p className="hint" style={{ margin: 0 }}>
+              Your browser did not offer an install button. In Chrome or Edge, look for the install icon in the
+              address bar, or open the browser menu and choose Install app.
+            </p>
+          )}
         </SettingsSection>
 
         <SettingsSection

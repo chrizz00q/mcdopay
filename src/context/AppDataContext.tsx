@@ -33,6 +33,9 @@ export function AppDataProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', settings.theme);
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute('content', settings.theme === 'dark' ? '#0c0d0f' : '#e9ebe5');
   }, [settings.theme]);
 
   useEffect(() => {

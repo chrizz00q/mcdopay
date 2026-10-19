@@ -30,7 +30,7 @@ export function Envelopes({ plan, stats, hasPreviousPlan, onItemsChange, onStart
   };
 
   return (
-    <section className="card" aria-label="Envelopes">
+    <section className="card budget-env" aria-label="Envelopes">
       <div className="section-heading">
         <h2>Give every peso a job</h2>
         <span className="section-heading__hint">one envelope per cost</span>

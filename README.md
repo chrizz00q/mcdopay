@@ -1,32 +1,31 @@
-# React + TypeScript + Vite
+# Mcdopay
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Work-hours and salary tracker with a cutoff budget planner. React + TypeScript + Vite.
+All data is stored in the browser (localStorage). Use Settings → Backup and restore to keep a copy.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Publish on GitHub Pages
+
+```bash
+npm run build
+```
+
+Pushing to `main` deploys automatically through `.github/workflows/deploy.yml` (Settings → Pages → Source: GitHub Actions).
+To publish by hand instead, upload the **contents** of the `dist` folder (not the folder itself) to the branch GitHub Pages serves.
+The app uses relative paths and a hash router, so it works from `https://<user>.github.io/<repo>/`
+without any extra setup. GitHub Pages is https, which installing and offline use require.
+
+## Install and offline
+
+- The build writes `dist/sw.js`, which saves every app file on the device after the first visit.
+- Android and desktop Chrome/Edge show an **Install app** button. iPhone has no such button, so the app
+  shows steps for Share → Add to Home Screen.
+- After you publish a new version, open the app once with internet and close it fully. The next launch uses the update.
+- An iPhone Home Screen app keeps its own storage, so it starts empty. Download a backup from Safari first,
+  then restore it inside the installed app.
