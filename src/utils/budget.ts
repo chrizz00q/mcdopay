@@ -95,8 +95,10 @@ export function parseCutoffId(id: string): { monthDate: Date; which: CutoffWhich
 
 export function currentCutoffId(today = new Date()): string {
   const day = getDate(today);
-  if (day < 4) return makeCutoffId(addMonths(today, -1), 2);
-  return makeCutoffId(today, day < 19 ? 1 : 2);
+  // Budget the cutoff whose payday most recently arrived.
+  if (day >= 19) return makeCutoffId(today, 1);                // 19th–end: this month's 1st cutoff (1–15)
+  if (day >= 4) return makeCutoffId(addMonths(today, -1), 2);  // 4th–18th: last month's 2nd cutoff (16–end)
+  return makeCutoffId(addMonths(today, -1), 1);                // 1st–3rd: last month's 1st cutoff (1–15)
 }
 
 export function shiftCutoff(id: string, delta: 1 | -1): string {
